@@ -10,6 +10,7 @@ export const LOGIN = gql`
   mutation($data: LoginInputType!) {
     login(data: $data) {
       user {
+        _id
         name
       }
       token
@@ -32,6 +33,10 @@ export const REGISTER = gql`
 export const CHANGE_PASSWORD = gql`
   mutation($password: String!, $token: String!) {
     changePassword(password: $password, token: $token) {
+      user{
+        _id
+        name
+      }
       token
     }
   }
@@ -40,6 +45,10 @@ export const CHANGE_PASSWORD = gql`
 export const LOGIN_OR_REGISTER_WITH_GOOGLE = gql`
   mutation($data: AuthGoogleInput!) {
     authGoogle(data: $data) {
+      user {
+        _id
+        name
+      }
       token
     }
   }
@@ -50,6 +59,7 @@ export const LOGIN_OR_REGISTER_WITH_FACEBOOK = gql`
     authFacebook(data: $data) {
       token
       user {
+        _id
         name
       }
     }

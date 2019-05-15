@@ -40,7 +40,7 @@ const Frm = ({
           cache.writeQuery({
             query: CURRENT_USER,
             data: {
-              me: data.register.user
+              me: data.authGoogle.user
             }
           });
         }
@@ -65,7 +65,7 @@ const Frm = ({
           cache.writeQuery({
             query: CURRENT_USER,
             data: {
-              me: data.register.user
+              me: data.authFacebook.user
             }
           });
         }
