@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Root from "./Root";
 import './style.css';
 import { ApolloProvider } from "react-apollo-hooks";
 import { ApolloClient } from "apollo-client";
@@ -32,7 +32,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <App />
+      <Root />
     </BrowserRouter>
   </ApolloProvider>,
   document.getElementById("root")
