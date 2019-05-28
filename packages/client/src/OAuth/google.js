@@ -46,6 +46,7 @@ const GoogleAuth = ({ path, history }) => {
           disabled={renderProps.disabled}
           className="ui google plus labeled icon button"
         >
+        {console.log(renderProps)}
           <Icon name="google" /> {path} With Google
         </button>
       )}

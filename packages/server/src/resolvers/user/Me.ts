@@ -6,9 +6,9 @@ import { User } from "../../entities/user";
 @Resolver()
 export class Me {
   @Query(returns => User)
-  me(@Ctx() { req, UserModel }: MyContext) {
+  async me(@Ctx() { req, UserModel }: MyContext): Promise<User | null> {
     const userId = getUserId(req);
-
-    return UserModel.findById(userId);
+    const user = await UserModel.findById(userId);;
+    return user;
   }
 }

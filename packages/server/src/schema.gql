@@ -24,12 +24,12 @@ input LoginInputType {
 }
 
 type Mutation {
-  authFacebook(data: AuthFacebookInput!): AuthPayload!
-  authGoogle(data: AuthGoogleInput!): AuthPayload!
+  register(data: RegisterInputType!): AuthPayload!
+  login(data: LoginInputType!): AuthPayload!
   changePassword(password: String!, token: String!): AuthPayload!
   forgotPassword(email: String!): String!
-  login(data: LoginInputType!): AuthPayload!
-  register(data: RegisterInputType!): AuthPayload!
+  authFacebook(data: AuthFacebookInput!): AuthPayload!
+  authGoogle(data: AuthGoogleInput!): AuthPayload!
 }
 
 """Mongo object id scalar type"""

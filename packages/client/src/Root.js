@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
+
 import Login from "Login";
 import Register from "Register";
 import Secret from "Secret";
-import Navbar from "shared/Navbar";
+import Navbar from "Navbar";
 import ForgotPassword from "Forgot-Password";
 import NotFound from "Notfound";
 import ChangePassword from 'Change-Password';

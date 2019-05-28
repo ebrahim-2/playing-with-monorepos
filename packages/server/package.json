@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --no-notify src/index.ts",
-    "build": "tsc"
+    "dev": "ts-node-dev --respawn --no-notify src/index.ts",
+    "build": "rimraf ./dist && tsc && copyfiles -u 1 src/**/*.gql dist",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "Ebrahim",
@@ -15,6 +16,7 @@
     "apollo-server-express": "^2.5.0",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.9.1",
+    "copyfiles": "^2.1.0",
     "express": "^4.16.4",
     "graphql": "^14.3.0",
     "ioredis": "^4.9.3",
@@ -22,6 +24,7 @@
     "mongoose": "^5.5.7",
     "ms": "^2.1.1",
     "reflect-metadata": "^0.1.13",
+    "rimraf": "^2.6.3",
     "type-graphql": "^0.17.3",
     "typegoose": "^5.6.0",
     "uuid": "^3.3.2"
@@ -30,10 +33,10 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.16.1",
     "@types/graphql": "^14.2.0",
-    "@types/mongoose": "^5.5.0",
-    "@types/node": "^12.0.0",
     "@types/ioredis": "^4.0.10",
     "@types/jsonwebtoken": "^8.3.2",
+    "@types/mongoose": "^5.5.0",
+    "@types/node": "^12.0.0",
     "@types/uuid": "^3.4.4",
     "ts-node-dev": "^1.0.0-pre.37",
     "typescript": "^3.4.5"

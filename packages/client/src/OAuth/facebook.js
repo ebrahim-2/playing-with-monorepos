@@ -46,7 +46,9 @@ const FacebookAuth = ({ path, history }) => {
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
           className="ui facebook right floated labeled icon button"
+          type="button"
         >
+        {console.log(renderProps)}
           <Icon name="facebook f" /> {path} With Facebook
         </button>
       )}

@@ -1,0 +1,22 @@
+
+language: node_js
+node_js:
+  - "11.15.0"
+
+cache: yarn
+
+install:
+  - yarn global add lerna jest
+  - lerna bootstrap
+
+matrix:
+  include:
+    - name: "Client Pipeline"
+      env: PACKAGE_LOCATION=packages/client
+    - name: "Server Pipeline"
+      env: PACKAGE_LOCATION=packages/server
+      
+script: 
+  - cd $PACKAGE_LOCATION
+  - yarn test
+  - yarn build
