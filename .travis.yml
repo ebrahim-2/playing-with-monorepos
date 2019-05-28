@@ -15,8 +15,7 @@ matrix:
       env: PACKAGE_LOCATION=packages/client
     - name: "Server Pipeline"
       env: PACKAGE_LOCATION=packages/server
-      
+
 script: 
   - cd $PACKAGE_LOCATION
   - yarn test
-  - yarn build
